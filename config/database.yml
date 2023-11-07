@@ -79,6 +79,4 @@ test:
 #
 production:
   <<: *default
-  database: mulhousevent2_production
-  username: mulhousevent2
-  password: <%= ENV["MULHOUSEVENT2_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

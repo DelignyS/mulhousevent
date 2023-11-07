@@ -72,6 +72,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "mulhousevent2_production"
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = { host: 'https://mulhousevent-0b4c949ec7b1.herokuapp.com/' }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -94,4 +95,14 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+  ActionMailer::Base.smtp_settings = {
+  user_name: ENV['MAILJET_LOGIN'],
+  password: ENV['MAILJET_PWD'],
+  domain: 'https://mulhousevent-0b4c949ec7b1.herokuapp.com/',
+  address: 'in-v3.mailjet.com',
+  port: 587,
+  authentication: :plain,
+  enable_starttls_auto: true
+}
 end
