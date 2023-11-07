@@ -1,0 +1,37 @@
+<h1>Partagez vos évenements, sur Mulhouse!</h1>
+
+<div class="form-container">
+  <%= form_for @event, html: { class: "event-form" } do |f| %>
+    <div class="field">
+      <%= f.label :name, class: "field-label" %><br>
+      <%= f.text_field :name, class: "field-input" %>
+    </div>
+    <div class="field">
+      <%= f.label :description, class: "field-label" %><br>
+      <%= f.text_area :description, class: "field-input" %>
+    </div>
+    <div class="field">
+      <%= f.label :date, class: "field-label" %><br>
+      <%= f.datetime_select :date, class: "field-input" %>
+    </div>
+    <div class="field">
+      <%= f.label :place, class: "field-label" %><br>
+      <%= f.text_field :place, class: "field-input" %>
+    </div>
+    <div class="actions">
+      <%= f.submit class: "submit-button" %>
+    </div>
+  <% end %>
+
+  <% if @event.errors.any? %>
+    <div id="error_explanation" class="error-messages">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>

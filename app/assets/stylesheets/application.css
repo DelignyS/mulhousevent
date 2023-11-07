@@ -8,6 +8,9 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+  place-items: center;
+  margin: 0;
+  background-color: #f3f3f3;
   }
 
 
@@ -18,4 +21,50 @@ body {
 
 .footer {
   padding: 20px;
+}
+
+
+.event-form {
+  margin: auto;
+  
+}
+
+.field {
+  margin-bottom: 1em;
+}
+
+.field-label {
+  display: block;
+  font-weight: bold;
+}
+
+.field-input {
+  /* Styles pour les champs de saisie ici */
+}
+
+.actions {
+  margin-top: 2em;
+}
+
+.submit-button {
+  /* Styles pour le bouton de soumission ici */
+}
+
+.error-messages {
+  color: red;
+  margin-bottom: 1em;
+}
+
+.error-messages ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(211, 211, 211, 0.5); /* Gris légèrement transparent */
+  padding: 20px;
+  border-radius: 5px;
 }

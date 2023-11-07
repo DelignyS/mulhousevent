@@ -1,0 +1,14 @@
+<h1>Venez Découvrir nos évènements Mulhousiens</h1>
+
+<div class="row">
+  <% @events.each do |event| %>
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title"><%= event.name %></h5>
+          <p class="card-text"><%= event.description %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

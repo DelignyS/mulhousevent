@@ -40,8 +40,8 @@
         <%= link_to "Mulhouse Event", root_path, class: "navbar-brand" %>
         <div class="d-flex justify-content-center">
           <%= link_to "Se connecter", new_user_session_path, class: "btn btn-dark mx-2" %>
-          <%= link_to "Partager", "#", class: "btn btn-dark mx-2" %>
-          <%= link_to "Découvrir", "#", class: "btn btn-dark mx-2" %>
+          <%= link_to "Partager", new_event_path, class: "btn btn-dark mx-2" %>
+          <%= link_to "Découvrir", user_signed_in? ? events_path : "#", class: "btn btn-dark mx-2" %>
           <% if user_signed_in? %>
           <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-dark mx-2" do %>
           <i class="bi bi-door-open-fill"></i> Log Out
