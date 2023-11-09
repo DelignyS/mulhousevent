@@ -1,0 +1,18 @@
+<!-- app/views/users/show.html.erb -->
+
+<h1><%= @user.email %></h1>
+
+<% if @user.avatar.attached? %>
+  <%= image_tag @user.avatar, class: "avatar", alt: "User Avatar" if @user.avatar.attached? %>
+<% end %>
+
+<%= form_with(model: @user, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
